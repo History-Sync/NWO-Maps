@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--Made for a course at Bowling Green State University in Janurary 2021-->
+<html>
+<head>
+  <title>Northwest Ohio Interactive Web Map.</title>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css' rel='stylesheet' />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+</head>
+<body>
+  <h1>Northwest Ohio Interactive Web Map - Imagery circa roughly 2019.</h1>
+  <ul>
+    <li class="button"><a href="./index.html">Home</li>
+    <li class="button"><a href="./1858.html">1858</li>
+    <li class="button"><a href="./1901.html">1901</li>
+    <li class="button"><a href="./1939.html">1939</li>
+    <li class="button"><a href="./1951.html">1951</li>
+    <li class="button"><a href="./1994.html">1994</li>
+    <li class="button"><a href="./recent.html">Recent</li>
+  </ul><div id='map' style='width: 100%; height: 800px;'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoibWF4YnJpY2tuZXItd29yayIsImEiOiJja2oxdmFieDMwOXN3MnNwazF1OW5tMTUxIn0.lCBt7X8j--bOBRGMHGnS7w';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/maxbrickner-work/ckjne6tq12r4d19qbcrg43bej',
+    center: [-83.6505, 41.3749],
+    zoom: 10
+});
+</script>
+</body>
+</html>
