@@ -19,6 +19,8 @@ var map = new mapboxgl.Map({
     center: [-83.6505, 41.3749],
     zoom: 10
 });
+var nav = new mapboxgl.NavigationControl();
+map.addControl(nav, 'top-left');
 </script>
 </body>
 </html>
