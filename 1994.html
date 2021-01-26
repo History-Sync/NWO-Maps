@@ -3,31 +3,22 @@
 <html>
 <head>
   <title>Northwest Ohio Interactive Web Map.</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-   crossorigin=""/>
-   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
-  <style>
-    #mapid { height: 800px; }
-  </style>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css' rel='stylesheet' />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
 </head>
 <body>
-  <h1>Northwest Ohio Interactive Web Map - 1994.</h1>
-  <p><a href="https://history-sync.github.io/NWO-Maps/">Home</a></p>
-   <div id="mapid"></div>
+  <h1>Northwest Ohio Interactive Web Map - 1951.</h1>
+  <p><a href="./index.html">Home</a></p>
+<div id='map' style='width: 100%; height: 500px;'></div>
 <script>
-  var mymap = L.map('mapid').setView([41.3749, -83.6505], 10);
-  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'maxbrickner-work/ckjne6tq12r4d19qbcrg43bej',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'pk.eyJ1IjoibWF4YnJpY2tuZXItd29yayIsImEiOiJja2oxdmFieDMwOXN3MnNwazF1OW5tMTUxIn0.lCBt7X8j--bOBRGMHGnS7w'
-   }).addTo(mymap);
+mapboxgl.accessToken = 'pk.eyJ1IjoibWF4YnJpY2tuZXItd29yayIsImEiOiJja2oxdmFieDMwOXN3MnNwazF1OW5tMTUxIn0.lCBt7X8j--bOBRGMHGnS7w';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/maxbrickner-work/ckjne6tq12r4d19qbcrg43bej',
+    center: [-83.6505, 41.3749],
+    zoom: 10
+});
 </script>
 </body>
 </html>
